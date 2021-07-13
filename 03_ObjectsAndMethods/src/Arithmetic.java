@@ -7,12 +7,12 @@ public class Arithmetic {
     int min = -1;
     int max = -1;
 
+
     public Arithmetic(int i, int i1) {
     }
 
-
     public static void main(String[] args) {
-        System.out.println("(2+3) * (7-4)= " + new Arithmetic(new Arithmetic(2, 3).addition(), new Arithmetic(7, 4).addition()).multiplication());
+        System.out.println("(2+3) * (7+4)= " + new Arithmetic(new Arithmetic(2, 3).addition(), new Arithmetic(7, 4).addition()).multiplication());
     }
 
 
@@ -30,13 +30,21 @@ public class Arithmetic {
     }
 
     public int min() {
-        if (totalCosts <= totalProfit || totalProfit <= totalCosts) ;
-        return min;
+        if (totalCosts < totalProfit ){
+        return totalCosts;
+        }
+        else {
+            return totalProfit;
+        }
     }
 
     public int max() {
-        if (totalCosts >= totalProfit || totalProfit >= totalCosts) ;
-        return max;
+        if (totalCosts > totalProfit ){
+        return totalCosts;
+        }
+        else {
+            return totalProfit;
+        }
 
     }
 
