@@ -1,14 +1,14 @@
 public class CargoInformation {
 
 
-    private final int dimensions;
+    private final Dimensions dimensions;
     private final int weight;
-    private final int deliveryAddress;
+    private final String deliveryAddress;
     private final boolean canBeFlipped = false;
     private final String registrationNumber;
     private final boolean fragileCargo = false;
 
-    public CargoInformation(int dimensions, int weight,int deliveryAddress, String registrationNumber) {
+    public CargoInformation(Dimensions dimensions, int weight, String deliveryAddress, String registrationNumber) {
         this.dimensions = dimensions;
         this.weight = weight;
         this.deliveryAddress = deliveryAddress;
@@ -17,7 +17,7 @@ public class CargoInformation {
     }
 
 
-    public CargoInformation setDimensions(int dimensions) {
+    public CargoInformation setDimensions(Dimensions dimensions) {
         return new CargoInformation(dimensions, weight, deliveryAddress, registrationNumber);
     }
 
@@ -25,7 +25,7 @@ public class CargoInformation {
         return new CargoInformation(dimensions, weight, deliveryAddress, registrationNumber);
     }
 
-    public CargoInformation setDeliveryAddress(int deliveryAddress) {
+    public CargoInformation setDeliveryAddress(String deliveryAddress) {
         return new CargoInformation(dimensions, weight, deliveryAddress, registrationNumber);
     }
 
@@ -33,7 +33,7 @@ public class CargoInformation {
         return new CargoInformation(dimensions, weight, deliveryAddress, registrationNumber);
     }
 
-    public int getDimensions() {
+    public Dimensions getDimensions() {
         return dimensions;
     }
 
@@ -41,7 +41,7 @@ public class CargoInformation {
         return weight;
     }
 
-    public int getDeliveryAddress() {
+    public String getDeliveryAddress() {
         return deliveryAddress;
     }
 
@@ -55,6 +55,9 @@ public class CargoInformation {
 
     public boolean isFragileCargo() {
         return fragileCargo;
+    }
+    public String toString(){
+        return "Информация о грузе: " + dimensions + "/" + weight + "/" + dimensions + "/" + registrationNumber + "/";
     }
 
 }
