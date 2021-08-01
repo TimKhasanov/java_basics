@@ -41,7 +41,7 @@ public class Dimensions {
 
     }
     public String toString(){
-        return "Габариты груза: " + length + "/" + width + "/" + height + "/";
+        return "Габариты груза: " + "Длинна:" + length + "," + "Ширина:" + width + "," + "Высота:" + height + ",";
     }
 
 }

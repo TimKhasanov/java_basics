@@ -56,8 +56,10 @@ public class CargoInformation {
     public boolean isFragileCargo() {
         return fragileCargo;
     }
-    public String toString(){
-        return "Информация о грузе: " + dimensions + "/" + weight + "/" + dimensions + "/" + registrationNumber + "/";
+
+    public String toString() {
+        return "Информация о грузе:" + dimensions + "Объем:" + dimensions.cargoVolume() + "," + "Масса:" + weight
+                + "," + "Адрес доставки:" + deliveryAddress + "," + "Номер автомобиля:" + registrationNumber;
     }
 
 }
