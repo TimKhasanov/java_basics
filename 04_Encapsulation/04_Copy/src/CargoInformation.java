@@ -40,7 +40,6 @@ public class CargoInformation {
     public int getWeight() {
         return weight;
     }
-
     public String getDeliveryAddress() {
         return deliveryAddress;
     }
@@ -59,7 +58,7 @@ public class CargoInformation {
 
     public String toString() {
         return "Информация о грузе:" + dimensions + "Объем:" + dimensions.cargoVolume() + "," + "Масса:" + weight
-                + "," + "Адрес доставки:" + deliveryAddress + "," + "Номер автомобиля:" + registrationNumber;
+                + "," + "Адрес доставки:" + deliveryAddress + "," + "Номер автомобиля:" + registrationNumber ;
     }
 
 }
