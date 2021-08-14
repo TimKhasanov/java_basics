@@ -10,6 +10,7 @@ public class Basket {
     public static int totalNumberOfGoods = 0;
 
 
+
     public Basket() {
         increaseCount(1);
         items = "Список товаров:";
@@ -39,11 +40,11 @@ public class Basket {
         return totalNumberOfGoods;
     }
 
-    public static void calculatePrice(int price, int count) {
+    public static void increasePrice(int price, int count) {
         totalCost = totalCost + price * count;
     }
 
-    public static void calculateCountItems(int count) {
+    public static void increaseCountItems(int count) {
         totalNumberOfGoods = totalNumberOfGoods + count;
     }
 
@@ -83,11 +84,15 @@ public class Basket {
         items = items + "\n" + name + " - " +
                 count + " шт. - " + price;
         totalPrice = totalPrice + count * price;
+        increasePrice(price, count);
+        increaseCountItems(count);
+
     }
 
     public void clear() {
         items = "";
         totalPrice = 0;
+        totalWeight = 0;
     }
 
     public int getTotalPrice() {

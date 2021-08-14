@@ -5,6 +5,9 @@ public class Main {
         basket.add("Milk", 40);
         basket.print("Milk");
         basket.add("apple", 50, 1, 500);
-        basket.print(" ");
+        basket.print("apple");
+        System.out.println("Сумма всех товаров"+ Basket.getTotalCost());
+        System.out.println("Количество товаров"+ Basket.getTotalNumberOfGoods());
     }
+
 }
