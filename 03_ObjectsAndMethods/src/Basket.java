@@ -6,8 +6,8 @@ public class Basket {
     private int totalPrice = 0;
     private int limit;
     private double totalWeight = 0;
-    public static int totalCost = 0;
-    public static int totalNumberOfGoods = 0;
+   private static int totalCost = 0;
+    private static int totalNumberOfGoods = 0;
 
 
 
@@ -22,10 +22,11 @@ public class Basket {
         this.limit = limit;
     }
 
-    public Basket(String items, int totalPrice) {
+    public Basket(String items, int totalPrice, double totalWeight) {
         this();
         this.items = this.items + items;
         this.totalPrice = totalPrice;
+        this.totalWeight = totalWeight;
     }
 
     public static int getCount() {
@@ -40,11 +41,11 @@ public class Basket {
         return totalNumberOfGoods;
     }
 
-    public static void increasePrice(int price, int count) {
+    private static void increasePrice(int price, int count) {
         totalCost = totalCost + price * count;
     }
 
-    public static void increaseCountItems(int count) {
+    private static void increaseCountItems(int count) {
         totalNumberOfGoods = totalNumberOfGoods + count;
     }
 
@@ -93,6 +94,7 @@ public class Basket {
         items = "";
         totalPrice = 0;
         totalWeight = 0;
+        return;
     }
 
     public int getTotalPrice() {
