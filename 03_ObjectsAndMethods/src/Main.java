@@ -9,6 +9,7 @@ public class Main {
         System.out.println("Сумма всех товаров: "+ Basket.getTotalCost());
         System.out.println("Количество товаров: "+ Basket.getTotalNumberOfGoods());
         System.out.println("Средняя сумма во всех корзинах: " + Basket.averagePrice());
+        System.out.println("Средняя цена корзины: " + Basket.averageBasketPrice());
     }
 
 }
