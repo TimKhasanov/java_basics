@@ -26,8 +26,11 @@ public class Basket {
         this.items = this.items + items;
         this.totalPrice = totalPrice;
         this.totalWeight = totalWeight;
+        increaseCount(1);
+        increasePrice(50, 1);
 
     }
+
 
     public static int getCount() {
         return count;
@@ -99,10 +102,11 @@ public class Basket {
 
     }
 
-    public int clear() {
+    public void clear() {
         items = "";
+        totalCost = totalCost - totalNumberOfGoods;
         totalPrice = 0;
-        return count = 0;
+
 
     }
 
