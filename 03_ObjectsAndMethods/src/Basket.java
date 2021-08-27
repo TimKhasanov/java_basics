@@ -8,6 +8,7 @@ public class Basket {
     private double totalWeight = 0;
     private static int totalCost = 0;
     private static int totalNumberOfGoods = 0;
+    private static int itemInCart = 0;
 
 
     public Basket() {
@@ -26,9 +27,13 @@ public class Basket {
         this.items = this.items + items;
         this.totalPrice = totalPrice;
         this.totalWeight = totalWeight;
-        increaseCount(1);
-        increasePrice(50, 1);
+        increaseCount(count);
+        increasePrice(count, totalPrice);
 
+    }
+
+    public static int getItemInCart() {
+        return itemInCart;
     }
 
 
@@ -104,8 +109,10 @@ public class Basket {
 
     public void clear() {
         items = "";
-        totalCost = totalCost - totalNumberOfGoods;
+        totalCost = totalCost - totalPrice;
         totalPrice = 0;
+        totalNumberOfGoods = totalNumberOfGoods - itemInCart;
+        itemInCart = 0;
 
 
     }
