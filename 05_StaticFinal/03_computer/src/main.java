@@ -7,16 +7,6 @@ public class main {
         Keyboard keyboard = new Keyboard("Механическая", true, 500);
         Computer computer = new Computer(" HP", " Probook", processor, ramMemory, hardDrive, screen, keyboard);
         System.out.println(computer);
-        processor.toString();
-        System.out.println(processor.toString());
-        ramMemory.toString();
-        System.out.println(ramMemory.toString());
-        hardDrive.toString();
-        System.out.println(hardDrive.toString());
-        screen.toString();
-        System.out.println(screen.toString());
-        keyboard.toString();
-        System.out.println(keyboard.toString());
 
 
     }

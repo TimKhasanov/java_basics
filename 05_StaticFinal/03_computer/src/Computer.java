@@ -2,14 +2,12 @@ public class Computer {
 
     private final String vendor;
     private final String name;
-    private final Processor processor;
-    private final RamMemory ramMemory;
-    private final HardDrive hardDrive;
-    private final Screen screen;
-    private final Keyboard keyboard;
-
-
-    private double totalWeight;
+    public Processor processor;
+    public RamMemory ramMemory;
+    public HardDrive hardDrive;
+    public Screen screen;
+    public Keyboard keyboard;
+    public double totalWeight;
 
     public Computer(String vendor, String name, Processor processor, RamMemory ramMemory, HardDrive hardDrive, Screen screen, Keyboard keyboard) {
         this.vendor = vendor;
@@ -50,6 +48,7 @@ public class Computer {
         return new Computer(vendor, name, processor, ramMemory, hardDrive, screen, keyboard);
     }
 
+
     public double getTotalWeight() {
         return totalWeight;
     }
@@ -89,7 +88,10 @@ public class Computer {
     public String toString() {
         return "\nПроизводитель" + vendor +
                 "\nНазвание" + name +
-                "\nВес компютера " + totalWeight + " гр";
+                "\nОбщий вес компютера " + totalWeight + " гр" + processor.toString() +
+                ramMemory.toString() + hardDrive.toString() + screen.toString() + keyboard.toString();
+
+
     }
 
 
