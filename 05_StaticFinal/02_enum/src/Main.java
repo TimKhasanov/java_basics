@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator(4,2);
+        ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator(13,15);
         arithmeticCalculator.calculate(Operation.ADD);
         System.out.println(arithmeticCalculator.calculate(Operation.ADD));
         arithmeticCalculator.calculate(Operation.SUBTRACT);
