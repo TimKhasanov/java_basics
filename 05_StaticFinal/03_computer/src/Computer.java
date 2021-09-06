@@ -9,43 +9,41 @@ public class Computer {
     public Keyboard keyboard;
     public double totalWeight;
 
-    public Computer(String vendor, String name, Processor processor, RamMemory ramMemory, HardDrive hardDrive, Screen screen, Keyboard keyboard) {
+    public Computer(String vendor, String name) {
         this.vendor = vendor;
         this.name = name;
-        this.processor = processor;
-        this.ramMemory = ramMemory;
-        this.hardDrive = hardDrive;
-        this.screen = screen;
-        this.keyboard = keyboard;
         calculateWeight();
     }
 
     public Computer setVendor(String vendor) {
-        return new Computer(vendor, name, processor, ramMemory, hardDrive, screen, keyboard);
+        return new Computer(vendor, name);
     }
 
     public Computer setName(String name) {
-        return new Computer(vendor, name, processor, ramMemory, hardDrive, screen, keyboard);
+        return new Computer(vendor, name);
+    }
+    public void setProcessor(Processor processor) {
+        this.processor = processor;
     }
 
-    public Computer setProcessor(Processor processor) {
-        return new Computer(vendor, name, processor, ramMemory, hardDrive, screen, keyboard);
+    public void setRamMemory(RamMemory ramMemory) {
+        this.ramMemory = ramMemory;
     }
 
-    public Computer setRamMemory(RamMemory ramMemory) {
-        return new Computer(vendor, name, processor, ramMemory, hardDrive, screen, keyboard);
+    public void setHardDrive(HardDrive hardDrive) {
+        this.hardDrive = hardDrive;
     }
 
-    public Computer setHardDrive(HardDrive hardDrive) {
-        return new Computer(vendor, name, processor, ramMemory, hardDrive, screen, keyboard);
+    public void setScreen(Screen screen) {
+        this.screen = screen;
     }
 
-    public Computer setScreen(Screen screen) {
-        return new Computer(vendor, name, processor, ramMemory, hardDrive, screen, keyboard);
+    public void setKeyboard(Keyboard keyboard) {
+        this.keyboard = keyboard;
     }
 
-    public Computer setKeyboard(Keyboard keyboard) {
-        return new Computer(vendor, name, processor, ramMemory, hardDrive, screen, keyboard);
+    public void setTotalWeight(double totalWeight) {
+        this.totalWeight = totalWeight;
     }
 
 
@@ -82,7 +80,7 @@ public class Computer {
     }
 
     public void calculateWeight() {
-        totalWeight = (totalWeight + processor.getWeight() + ramMemory.getWeight() + hardDrive.getWeight() + screen.getWeight() + keyboard.getWeight());
+        totalWeight = (totalWeight + processor.getWeight()+ ramMemory.getWeight() + hardDrive.getWeight() + screen.getWeight() + keyboard.getWeight());
     }
 
     public String toString() {

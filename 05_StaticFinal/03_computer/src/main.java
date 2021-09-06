@@ -5,7 +5,7 @@ public class main {
         HardDrive hardDrive = new HardDrive(HardDriveType.HDD, 256, 500);
         Screen screen = new Screen(15.6, ScreenType.IPS, 1000);
         Keyboard keyboard = new Keyboard("Механическая", true, 500);
-        Computer computer = new Computer(" HP", " Probook", processor, ramMemory, hardDrive, screen, keyboard);
+        Computer computer = new Computer(" HP", " Probook");
         System.out.println(computer);
 
 
