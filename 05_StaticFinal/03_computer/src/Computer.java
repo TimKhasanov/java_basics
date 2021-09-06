@@ -9,18 +9,23 @@ public class Computer {
     public Keyboard keyboard;
     public double totalWeight;
 
-    public Computer(String vendor, String name) {
+    public Computer(String vendor, String name, Processor processor, RamMemory ramMemory, HardDrive hardDrive, Screen screen, Keyboard keyboard) {
         this.vendor = vendor;
         this.name = name;
+        this.processor = processor;
+        this.ramMemory = ramMemory;
+        this.hardDrive = hardDrive;
+        this.screen = screen;
+        this.keyboard = keyboard;
         calculateWeight();
     }
 
     public Computer setVendor(String vendor) {
-        return new Computer(vendor, name);
+        return new Computer(vendor, name, processor, ramMemory, hardDrive, screen, keyboard);
     }
 
     public Computer setName(String name) {
-        return new Computer(vendor, name);
+        return new Computer(vendor, name, processor, ramMemory, hardDrive, screen, keyboard);
     }
     public void setProcessor(Processor processor) {
         this.processor = processor;
