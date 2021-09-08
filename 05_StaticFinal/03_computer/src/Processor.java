@@ -5,11 +5,14 @@ public class Processor {
     private final String manufacturer;
     private final double weight;
 
+
     public Processor(double frequency, int numberOfCores, String manufacturer, double weight) {
         this.frequency = frequency;
         this.numberOfCores = numberOfCores;
         this.manufacturer = manufacturer;
         this.weight = weight;
+
+
     }
 
     public Processor setFrequency(double frequency) {

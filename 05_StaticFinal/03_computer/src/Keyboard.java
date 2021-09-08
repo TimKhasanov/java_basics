@@ -11,6 +11,7 @@ public class Keyboard {
         this.weight = weight;
     }
 
+
     public Keyboard setType(String type) {
         return new Keyboard(type, illumination, weight);
     }
@@ -34,6 +35,7 @@ public class Keyboard {
     public double getWeight() {
         return weight;
     }
+
 
     public String toString() {
         return "\nТип клавиатуры : " + type +

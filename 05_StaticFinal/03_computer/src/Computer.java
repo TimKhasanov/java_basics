@@ -7,7 +7,8 @@ public class Computer {
     public HardDrive hardDrive;
     public Screen screen;
     public Keyboard keyboard;
-    public double totalWeight;
+
+
 
     public Computer(String vendor, String name, Processor processor, RamMemory ramMemory, HardDrive hardDrive, Screen screen, Keyboard keyboard) {
         this.vendor = vendor;
@@ -17,7 +18,7 @@ public class Computer {
         this.hardDrive = hardDrive;
         this.screen = screen;
         this.keyboard = keyboard;
-        calculateWeight();
+        getWeight();
     }
 
     public Computer setVendor(String vendor) {
@@ -27,6 +28,7 @@ public class Computer {
     public Computer setName(String name) {
         return new Computer(vendor, name, processor, ramMemory, hardDrive, screen, keyboard);
     }
+
     public void setProcessor(Processor processor) {
         this.processor = processor;
     }
@@ -44,17 +46,7 @@ public class Computer {
     }
 
     public void setKeyboard(Keyboard keyboard) {
-        this.keyboard = keyboard;
-    }
-
-    public void setTotalWeight(double totalWeight) {
-        this.totalWeight = totalWeight;
-    }
-
-
-    public double getTotalWeight() {
-        return totalWeight;
-    }
+        this.keyboard = keyboard;}
 
     public String getVendor() {
         return vendor;
@@ -84,14 +76,14 @@ public class Computer {
         return keyboard;
     }
 
-    public void calculateWeight() {
-        totalWeight = (totalWeight + processor.getWeight()+ ramMemory.getWeight() + hardDrive.getWeight() + screen.getWeight() + keyboard.getWeight());
+    public double getWeight() {
+         return  processor.getWeight() + ramMemory.getWeight() + hardDrive.getWeight() + screen.getWeight() + keyboard.getWeight();
     }
 
     public String toString() {
         return "\nПроизводитель" + vendor +
                 "\nНазвание" + name +
-                "\nОбщий вес компютера " + totalWeight + " гр" + processor.toString() +
+                "\nОбщий вес компютера " + getWeight() + " гр" + processor.toString() +
                 ramMemory.toString() + hardDrive.toString() + screen.toString() + keyboard.toString();
 
 
