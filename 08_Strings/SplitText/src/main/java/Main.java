@@ -6,7 +6,9 @@ public class Main {
 
   public static String splitTextIntoWords(String text) {
     //TODO реализуйте метод
-    return "";
+     return text.replaceAll("-", " ")
+            .replaceAll("\\p{Punct}|[0-9]", "")
+            .replaceAll(" ", "\n");
   }
 
 }
