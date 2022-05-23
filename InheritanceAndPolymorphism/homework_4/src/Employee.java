@@ -1,6 +1,11 @@
 
-public interface Employee {
-    final int FIXED_PART_OF_SALARY = 50000;
+public interface Employee extends Comparable<Employee> {
+    final int FIXED_PART_OF_SALARY = 45000;
 
-    public int getMonthSalary();
+    int getMonthSalary();
+
+    @Override
+    default int compareTo(Employee o) {
+        return Integer.compare(getMonthSalary(), o.getMonthSalary());
+    }
 }

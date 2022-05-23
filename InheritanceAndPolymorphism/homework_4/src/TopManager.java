@@ -1,6 +1,11 @@
 public class TopManager implements Employee {
-    private final int bonus = (int)(Math.random()*(140000 + 1 - 115000) + 115000);
-    private final int salaryBonus = bonus / 100 * 150;
+    private int bonus;
+    private int salaryBonus;
+
+    public TopManager() {
+        bonus = (int) (Math.random() * (140000 + 1 - 115000) + 115000);
+        salaryBonus = bonus / 100 * 150;
+    }
 
     @Override
     public int getMonthSalary() {

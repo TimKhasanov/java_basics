@@ -1,9 +1,11 @@
-public class Manager implements Employee{
+public class Manager implements Employee {
+    private int bonus;
+    private int salaryBonus;
 
-
-   private final int bonus = (int)(Math.random()*(140000 + 1 - 115000) + 115000);
-   private final int salaryBonus = bonus /100 * 5;
-
+    public Manager() {
+        bonus = (int) (Math.random() * (140000 + 1 - 115000) + 115000);
+        salaryBonus = bonus / 100 * 5;
+    }
 
 
     @Override

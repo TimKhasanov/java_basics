@@ -1,41 +1,41 @@
 import java.util.*;
 
-public class Company implements Employee {
-    private final  List<Employee> employees= new ArrayList<Employee>();
+public class Company {
 
-     public void hire(Employee employee){
-         this.employees.add(employee);
+    private List<Employee> employees = new ArrayList<>();
 
-     }
-     public void hireAll(Collection<Employee> employees){
-         this.employees.addAll(employees);
+    public void hire(Employee employee) {
+        this.employees.add(employee);
 
     }
-    public void fire(Employee employee){
-         employees.remove(employee);
+
+    public void hireAll(List<Employee> employees) {
+        this.employees.addAll(employees);
 
     }
-    public static int getIncome(){
-         return 14000000;
+
+    public void fire(Employee employee) {
+        employees.remove(employee);
+
     }
-    public  int listOfEmployees(){
-         return employees.size();
+
+    public static int getIncome() {
+        return 14000000;
     }
 
     public List<Employee> getTopSalaryStaff(int count) {
-        return employees;
+        Collections.sort(employees);
+        Collections.reverse(employees);
+        return employees.subList(0, count);
     }
 
     public List<Employee> getLowestSalaryStaff(int count) {
-        return employees;
-    }
-    public List<Employee> getEmployees(){
-         return employees;
+        Collections.sort(employees);
+        return employees.subList(0, count);
     }
 
+    public List<Employee> getEmployees() {
+        return new ArrayList<>(employees);
 
-    @Override
-    public int getMonthSalary() {
-        return Company.getIncome();
     }
 }
