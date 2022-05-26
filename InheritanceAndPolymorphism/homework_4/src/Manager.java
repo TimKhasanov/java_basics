@@ -1,4 +1,5 @@
 public class Manager implements Employee {
+
     private int bonus;
     private int salaryBonus;
 
@@ -7,9 +8,12 @@ public class Manager implements Employee {
         salaryBonus = bonus / 100 * 5;
     }
 
-
     @Override
     public int getMonthSalary() {
         return FIXED_PART_OF_SALARY + salaryBonus;
+    }
+
+    public int getBonus() {
+        return bonus;
     }
 }

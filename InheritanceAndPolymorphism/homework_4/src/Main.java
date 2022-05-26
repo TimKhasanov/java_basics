@@ -9,6 +9,7 @@ public class Main {
         layoffsOfEmployees(staff);
         listOfTheHighestSalaries(staff);
         listOfTheLowestSalaries(staff);
+        System.out.println("Доход компании: " + staff.getIncome());
 
     }
 
@@ -24,7 +25,7 @@ public class Main {
         }
 
         for (int i = 0; i < 10; i++) {
-            TopManager topManager = new TopManager();
+            TopManager topManager = new TopManager(new Company());
             staff.hire(topManager);
         }
 
@@ -49,7 +50,7 @@ public class Main {
 
     private static void layoffsOfEmployees(Company staff) {
         List<Employee> employees = staff.getEmployees();
-        for (int i = 0; i < 136; i++) {
+        for (int i = 0; i < employees.size() / 2; i++) {
             staff.fire(employees.get(i));
         }
         System.out.println("Уволено 50% сотрудников, осталось " + staff.getEmployees().size());

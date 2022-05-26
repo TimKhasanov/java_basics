@@ -4,23 +4,37 @@ public class Company {
 
     private List<Employee> employees = new ArrayList<>();
 
+
     public void hire(Employee employee) {
-        this.employees.add(employee);
+        employee.setCompany(new Company());
+        employees.add(employee);
 
     }
 
-    public void hireAll(List<Employee> employees) {
-        this.employees.addAll(employees);
+    public void hireAll(List<Employee> employees, Employee employee) {
+        employee.setCompany(new Company());
+        employees.addAll(employees);
 
     }
 
     public void fire(Employee employee) {
+        employee.setCompany(null);
         employees.remove(employee);
 
     }
 
-    public static int getIncome() {
-        return 14000000;
+    public int companyIncome() {
+        int income = 0;
+        for (Employee i : employees) {
+            if (i instanceof Manager) {
+                income += ((Manager) i).getBonus();
+            }
+        }
+        return income;
+    }
+
+    public int getIncome() {
+        return companyIncome();
     }
 
     public List<Employee> getTopSalaryStaff(int count) {
