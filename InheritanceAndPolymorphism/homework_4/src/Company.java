@@ -6,19 +6,16 @@ public class Company {
 
 
     public void hire(Employee employee) {
-        employee.setCompany(new Company());
         employees.add(employee);
 
     }
 
-    public void hireAll(List<Employee> employees, Employee employee) {
-        employee.setCompany(new Company());
-        employees.addAll(employees);
+    public void hireAll(List<Employee> employees) {
+        this.employees.addAll(employees);
 
     }
 
     public void fire(Employee employee) {
-        employee.setCompany(null);
         employees.remove(employee);
 
     }

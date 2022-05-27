@@ -3,13 +3,9 @@ public class TopManager implements Employee {
     private Company company;
 
     public TopManager(Company company) {
-        setCompany(company);
-    }
-
-    @Override
-    public void setCompany(Company company) {
         this.company = company;
     }
+
 
     @Override
     public int getMonthSalary() {
