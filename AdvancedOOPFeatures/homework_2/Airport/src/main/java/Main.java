@@ -21,7 +21,7 @@ public class Main {
                 flatMap(terminal -> terminal.getFlights().stream())
                 .filter(time -> time.getDate().after(dateNow))
                 .filter(time -> time.getDate().before(date))
-                .filter(i -> i.getType() == Flight.Type.DEPARTURE)
+                .filter(type -> type.getType() == Flight.Type.DEPARTURE)
                 .collect(Collectors.toList());
 
         return list;
