@@ -1,17 +1,30 @@
 import com.skillbox.airport.Airport;
 import com.skillbox.airport.Flight;
-import java.util.Collections;
-import java.util.List;
+
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
+
+
     public static void main(String[] args) {
 
 
     }
 
     public static List<Flight> findPlanesLeavingInTheNextTwoHours(Airport airport) {
-        //TODO Метод должден вернуть список рейсов вылетающих в ближайшие два часа.
-        return Collections.emptyList();
+        Date dateNow = new Date();
+        Date date = new Date();
+        date.setHours(date.getHours()+2);
+
+        List<Flight> list = airport.getTerminals().stream().
+                flatMap(terminal -> terminal.getFlights().stream())
+                .filter(time -> time.getDate().after(dateNow))
+                .filter(time -> time.getDate().before(date))
+                .filter(i -> i.getType() == Flight.Type.DEPARTURE)
+                .collect(Collectors.toList());
+
+        return list;
     }
 
 }
