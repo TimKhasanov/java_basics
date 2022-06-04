@@ -21,8 +21,8 @@ public class Main {
         Date out = Date.from(date.atZone(ZoneId.systemDefault()).toInstant());
 
 
-        List<Flight> list = airport.getTerminals().stream().
-                flatMap(terminal -> terminal.getFlights().stream())
+        List<Flight> list = airport.getTerminals().stream()
+                .flatMap(terminal -> terminal.getFlights().stream())
                 .filter(time -> time.getDate().after(dateNow))
                 .filter(time -> time.getDate().before(out))
                 .filter(type -> type.getType() == Flight.Type.DEPARTURE)
