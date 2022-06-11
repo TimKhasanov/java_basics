@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class Main {
@@ -11,11 +12,12 @@ public class Main {
 
 
     public static void main(String[] args) {
-        try {
-            Scanner scanner = new Scanner(System.in);
-            CustomerStorage executor = new CustomerStorage();
 
-            while (true) {
+        Scanner scanner = new Scanner(System.in);
+        CustomerStorage executor = new CustomerStorage();
+
+        while (true) {
+            try {
                 String command = scanner.nextLine();
                 String[] tokens = command.split("\\s+", 2);
                 if (tokens[0].equals("add")) {
@@ -31,9 +33,13 @@ public class Main {
                 } else {
                     System.out.println(COMMAND_ERROR);
                 }
+            } catch (CustomerStorage.FormatLengthException formatLength) {
+                System.out.println(formatLength.toString());
+            } catch (CustomerStorage.FormatEmailException formatEmail) {
+                System.out.println(formatEmail.toString());
+            } catch (CustomerStorage.FormatPhoneException formatPhone) {
+                System.out.println(formatPhone.toString());
             }
-        } catch (IllegalArgumentException ex) {
-            System.out.println(ex.getMessage());
         }
     }
 }
