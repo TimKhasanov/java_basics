@@ -54,9 +54,8 @@ public class RouteCalculatorTest extends TestCase {
         oneTransfer.add(station2);
         oneTransfer.add(station3);
 
+
         twoTransfers.add(station2);
-        twoTransfers.add(station3);
-        twoTransfers.add(station4);
         twoTransfers.add(station5);
 
         stationIndex.addLine(line1);
@@ -106,12 +105,9 @@ public class RouteCalculatorTest extends TestCase {
     public void testGetRouteWithTwoConnections() {
         RouteCalculator calculator = new RouteCalculator(stationIndex);
         Station station1 = stationIndex.getStation("Маяковская");
-        Station station2 = stationIndex.getStation("Невский проспект");
-        Station station3 = stationIndex.getStation("Горьковская");
         Station station4 = stationIndex.getStation("Площадь Восстания");
-
         List<Station> expected = twoTransfers;
-        List<Station> actual = calculator.getShortestRoute(station1, station4);
+        List<Station> actual = calculator.getShortestRoute(station1,station4);
         assertEquals(expected, actual);
     }
 }
