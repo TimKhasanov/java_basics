@@ -15,14 +15,14 @@ public class RouteCalculator {
         this.stationIndex = stationIndex;
     }
 
-    public List<Station> getShortestRoute(Station from, Station to) { //краткий маршрут
+    public List<Station> getShortestRoute(Station from, Station to) {
         List<Station> route = getRouteOnTheLine(from, to);
         if (route != null) {
             return route;
         }
 
         route = getRouteWithOneConnection(from, to);
-        if (route != null) {
+        if (route != null && route.size() > 0) {
             return route;
         }
 
@@ -30,7 +30,7 @@ public class RouteCalculator {
         return route;
     }
 
-    public static double calculateDuration(List<Station> route) {// расчет продолжительности
+    public static double calculateDuration(List<Station> route) {
         double duration = 0;
         Station previousStation = null;
         for (int i = 0; i < route.size(); i++) {
@@ -44,7 +44,7 @@ public class RouteCalculator {
         return duration;
     }
 
-    private List<Station> getRouteOnTheLine(Station from, Station to) { // маршрут на линии
+    private List<Station> getRouteOnTheLine(Station from, Station to) {
         if (!from.getLine().equals(to.getLine())) {
             return null;
         }
@@ -75,7 +75,7 @@ public class RouteCalculator {
         return route;
     }
 
-    private List<Station> getRouteWithOneConnection(Station from, Station to) { // маршрут с одним соединением
+    private List<Station> getRouteWithOneConnection(Station from, Station to) {
         if (from.getLine().equals(to.getLine())) {
             return null;
         }
@@ -100,7 +100,7 @@ public class RouteCalculator {
         return route;
     }
 
-    private boolean isConnected(Station station1, Station station2) { //соединение
+    private boolean isConnected(Station station1, Station station2) {
         Set<Station> connected = stationIndex.getConnectedStations(station1);
         return connected.contains(station2);
     }
@@ -118,7 +118,7 @@ public class RouteCalculator {
         return null;
     }
 
-    private List<Station> getRouteWithTwoConnections(Station from, Station to) {// маршрут с двумя соединениями
+    private List<Station> getRouteWithTwoConnections(Station from, Station to) {
         if (from.getLine().equals(to.getLine())) {
             return null;
         }
