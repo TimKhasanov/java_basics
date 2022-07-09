@@ -9,7 +9,7 @@ import java.net.URL;
 
 
 public class Main {
-    private static  File file = new File("images");
+    private static  File file = new File("image/");
 
 
     public static void main(String[] args) {
@@ -19,7 +19,7 @@ public class Main {
             Document document = Jsoup.connect("https://lenta.ru/").get();
             Elements elements = document.select("img");
             for(Element elements1 : elements){
-                String srs = elements1.attr("src");
+                String srs = elements1.attr("abs:src");
                 getImages(srs);
             }
         } catch (Exception e) {
@@ -34,6 +34,9 @@ public class Main {
         try {
             URL url = new URL(src);
             InputStream in = url.openStream();
+            if(file.exists()){
+                file.createNewFile();
+            }
             OutputStream out = new BufferedOutputStream(new FileOutputStream(file + fileName));
             for (int b; (b = in.read()) != -1; ) {
                 out.write(b);
