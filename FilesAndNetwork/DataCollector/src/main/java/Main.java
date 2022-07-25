@@ -18,21 +18,24 @@ public class Main {
             ArrayList<File> fileList = new ArrayList<>();
             File s = new File("C:\\Users\\Hp\\java_basics\\FilesAndNetwork\\DataCollector\\src\\main\\InformationAboutStations\\");
             getFiles(s, fileList);
-            stationInfo(fileList);
+            for (File f : fileList){
+                System.out.println(f.getAbsoluteFile());
+            }
+           // stationInfo(fileList);
 
 
         } catch (Exception exception) {
             exception.printStackTrace();
         }
     }
-    private static void stationInfo(ArrayList<File> fileList){
-        JSONArray file1 = new JSONArray();
-        for (File file : fileList){
-            file1.add(file);
-            System.out.println(file1);
-        }
-
-    }
+//    private static void stationInfo(ArrayList<File> fileList){
+//        JSONArray file1 = new JSONArray();
+//        for (File file : fileList){
+//            file1.add(file);
+//            System.out.println(file1);
+//        }
+//
+//    }
 
     private static void getFiles(File rootFile, ArrayList<File> fileList) {
         if (rootFile.isDirectory()) {
